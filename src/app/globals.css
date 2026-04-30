@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg:         #080808;
+  --bg2:        #0f0f0f;
+  --bg3:        #141414;
+  --red:        #c0392b;
+  --red-light:  #e74c3c;
+  --gold:       #c9a84c;
+  --gold-light: #e8c97a;
+  --white:      #f0ebe3;
+  --muted:      #7a7068;
+  --border:     rgba(201, 168, 76, 0.18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+.font-jp {
+  font-family: 'Shippori Mincho', serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%       { opacity: 0.3; transform: scaleY(0.6); }
+}
+.scroll-line {
+  animation: scrollPulse 2s ease infinite;
+}
