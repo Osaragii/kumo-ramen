@@ -4,6 +4,8 @@
 
 A full-stack landing page for **Kumo Ramen**, a fictional Japanese ramen bar in Bandra West, Mumbai. Built with Next.js 14, Tailwind CSS, Google Sheets as a reservation database, Twilio WhatsApp notifications, and a password-protected admin dashboard.
 
+🌐 **Live Demo:** [kumo-ramen.vercel.app](https://kumo-ramen.vercel.app)
+
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8?style=flat-square&logo=tailwindcss)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript)
@@ -130,6 +132,8 @@ ADMIN_PASSWORD=your_secure_password
 3. Activate the sandbox by messaging the sandbox number from your WhatsApp
 4. Add your Account SID and Auth Token to `.env.local`
 
+> ⚠️ For production, upgrade to a WhatsApp Business API number so notifications never expire.
+
 ### 6. Run the dev server
 
 ```bash
@@ -146,6 +150,7 @@ When deploying to Vercel, add all variables from `.env.local` in:
 **Project Settings → Environment Variables**
 
 > ⚠️ For `GOOGLE_PRIVATE_KEY` — paste the full key including `\n` characters. Wrap it in double quotes.
+> ⚠️ For `NEXTAUTH_URL` — set this to your live Vercel URL e.g. `https://kumo-ramen.vercel.app`
 
 ---
 
